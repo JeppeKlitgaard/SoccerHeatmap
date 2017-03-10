@@ -52,7 +52,6 @@
               <LongitudeDegrees>9.50725288130343</LongitudeDegrees>
             </Position>
             <AltitudeMeters>76.4000015258789</AltitudeMeters>
-            <DistanceMeters>9.420000076293945</DistanceMeters>
             <Extensions>
               <ns3:TPX>
                 <ns3:Speed>0.9020000100135803</ns3:Speed>

@@ -18,12 +18,17 @@ def plot_data(data, savename=""):
     longs = []
 
     for trackpoint in trackpoints:
-        time = trackpoint.Time.string
-        lat = float(trackpoint.LatitudeDegrees.string)
-        lng = float(trackpoint.LongitudeDegrees.string)
-        alt = float(trackpoint.AltitudeMeters.string)
-        dist = float(trackpoint.DistanceMeters.string)
-        # TODO EXTRACT SPEED
+        try:
+            time = trackpoint.Time.string
+            lat = float(trackpoint.LatitudeDegrees.string)
+            lng = float(trackpoint.LongitudeDegrees.string)
+            alt = float(trackpoint.AltitudeMeters.string)
+            dist = float(trackpoint.DistanceMeters.string)
+            # TODO EXTRACT SPEED
+        except AttributeError as e:
+            print("Got error during parsing of a trackpoint. Skipping.")
+            print("Error: {}".format(e))
+            continue
 
         lats.append(lat)
         longs.append(lng)
